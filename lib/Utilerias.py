@@ -15,6 +15,21 @@ def cargarArchivoCSV(rutaArchivo, separador = ",", removerEncabezado = False):
     return datos[1:] if removerEncabezado else datos
 
 
+def imprimirMatriz(matriz):
+
+    for fila in matriz:
+
+        print(fila)
+
+def convertirMatrizAEnteros(matriz):
+
+    """Esta funcion convierte una matriz que contiene valores numericos
+    representados como cadenas, a su matriz equivalente pero ahora
+    almacenando los datos como tipos de dato int."""
+
+    return [[int(elemento)for elemento in fila] for fila in matriz]
+
+
 def encontrarMinimosMaximos(matriz):
 
     """Esta funcion tiene el proposito de calcular cual es el minimo y maximo valor de 
