@@ -24,7 +24,7 @@ def encontrarMinimosMaximos(matriz):
 
     numeroColumnas = len(matriz[0])
 
-    valores = [{"minimo" matriz[-1][columna]: , "maximo" : [0][columna]} for columna in range(numeroColumnas)]
+    valores = [{"minimo" : matriz[-1][columna] , "maximo" : [0][columna]} for columna in range(numeroColumnas)]
 
     for fila in range(numeroFilas):
 
