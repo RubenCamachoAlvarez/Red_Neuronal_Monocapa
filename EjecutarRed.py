@@ -7,7 +7,9 @@ dataset = matrizEnteros(datos)
 
 datasetEntrenamiento, datasetPrueba = dividirDatos(dataset, 0.75)
 
-print("\nNúmero de registros de entrenamiento:", len(datasetEntrenamiento))
+print("\nNúmero de registros del dataset:", len(dataset))
+
+print("Número de registros de entrenamiento:", len(datasetEntrenamiento))
 
 print("Número de registros de prueba:", len(datasetPrueba), end="\n"*2)
 
@@ -37,4 +39,14 @@ print("Numero de casos incorrectos:", len(casosIncorrectos))
 
 print(f"Precisión de la red: {precisionRed * 100} %")
 
+print("\nCasos de prueba correctos\n")
+
 imprimirCasos(casosCorrectos)
+
+print("\nCasos de prueba incorrectos\n")
+
+imprimirCasos(casosIncorrectos)
+
+print("\nInformacion de la red\n")
+
+red.imprimirInformacion()

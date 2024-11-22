@@ -196,17 +196,25 @@ def calcularRendimientoRed(redNeuronalMonocapa, matrizEntradas, matrizSalidasEsp
         
 def imprimirCasos(casos):
 
-    print("-"*55)
-    
-    print("{:15}|{:20}|{:20}".format("Entradas", "Salidas esperadas", "Salidas obtenidas"))
+    numeroGuiones = 80
 
-    print("-"*55)
+    print("-"*numeroGuiones)
+    
+    print("{:35}|{:20}|{:20}".format("Entradas", "Salidas esperadas", "Salidas obtenidas"))
+
+    print("-"*numeroGuiones)
 
     for registro in casos:
 
         entradas, salidasEsperadas, salidasObtenidas = registro
 
-        print("{:15}|{:20}|{:20}".format(str(entradas), str(salidasEsperadas), str(salidasObtenidas)))
+        listaFormato = ["{:3}".format(elemento) if isinstance(elemento,int) else "{:.3f}".format(elemento) for elemento in entradas]
+
+        cadenaEntradas = ", ".join(listaFormato)
+
+        cadenaEntradas = "[" + cadenaEntradas + "]"
+
+        print("{:35}|{:20}|{:20}".format(cadenaEntradas, str(salidasEsperadas), str(salidasObtenidas)))
 
 
 
