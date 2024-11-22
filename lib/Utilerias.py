@@ -217,17 +217,40 @@ def imprimirCasos(casos):
         print("{:35}|{:20}|{:20}".format(cadenaEntradas, str(salidasEsperadas), str(salidasObtenidas)))
 
 
-def imprimirMuestraDataset(rutaDataset):
+def imprimirMatrizFormato(matriz, encabezado = False):
 
-    dataset = cargarArchivoCSV(rutaDataset)
+    if encabezado == True:
 
-    for linea in dataset:
+        titulos = matriz[0]
+
+        matriz = matriz[1:]
+
+        print("-"*(10*len(titulos) + len(titulos) + 1))
+
+        print("|", end="")
+
+        for titulo in titulos:
+
+            print("{:10}".format(titulo), end="|")
+
+        print()
+
+        print("-"*(10*len(titulos) + len(titulos) + 1))
+
+
+    for linea in matriz:
 
         print("|", end="")
 
         for columna in linea:
 
-            print("{:4}|".format(columna if isinstance(columna, str) else int(columna)), end="")
+            cadenaFormato = "{:10}"
+
+            if isinstance(columna, float):
+
+                cadenaFormato = "{:7.3f}"
+            
+            print(cadenaFormato.format(columna), end="|")
 
         print()
 
