@@ -217,4 +217,18 @@ def imprimirCasos(casos):
         print("{:35}|{:20}|{:20}".format(cadenaEntradas, str(salidasEsperadas), str(salidasObtenidas)))
 
 
+def imprimirMuestraDataset(rutaDataset):
+
+    dataset = cargarArchivoCSV(rutaDataset)
+
+    for linea in dataset:
+
+        print("|", end="")
+
+        for columna in linea:
+
+            print("{:4}|".format(columna if isinstance(columna, str) else int(columna)), end="")
+
+        print()
+
 
