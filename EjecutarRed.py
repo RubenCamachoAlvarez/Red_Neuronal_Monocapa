@@ -35,7 +35,10 @@ if __name__ == "__main__":
     
     entradasPrueba, salidasEsperadas = dividirMatriz(datasetPrueba)
     
-    
+    print("Matriz transpuesta de las salidas para el entrenamiento")
+
+    imprimirMatriz(salidasEntrenamiento)
+
     
     entradasEntrenamiento = normalizar(entradasEntrenamiento)
     
@@ -49,13 +52,13 @@ if __name__ == "__main__":
     
     imprimirMatrizFormato(entradasPrueba)
     
-    red = RedNeuronalMonocapa(3, 3, 0.2)
+    red = RedNeuronalMonocapa(3, 3, 0.4)
     
     red.entrenar(entradasEntrenamiento, salidasEntrenamiento, 100)
     
     casosCorrectos, casosIncorrectos, precisionRed = calcularRendimientoRed(red, entradasPrueba, salidasEsperadas)
     
-    print("Numero de casos correctos:", len(casosCorrectos))
+    print("\nNumero de casos correctos:", len(casosCorrectos))
     
     print("Numero de casos incorrectos:", len(casosIncorrectos))
     
